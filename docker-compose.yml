@@ -23,6 +23,13 @@ services:
       pipe_net:
         ipv4_address: 172.16.238.11
 
+  envoy:
+    depends_on:
+      - lightwalletd
+    build:
+      context: ./envoy
+      dockerfile: envoy.Dockerfile
+
 networks:
   pipe_net:
     ipam:
